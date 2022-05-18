@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #2E5866;
+}
+.grid-row_1{
+    display: grid;
+    grid-template-columns: 1fr 4fr 0.4fr 0.4fr 0.4fr 0.4fr ;
+    background-color: #add8e6;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+nav > ul {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li{
+    margin: 0 5rem;
+    text-align: center;
+    list-style: none;
+}
