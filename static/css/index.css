@@ -25,7 +25,7 @@ html {
   }
 
 body{
-    overflow:hidden;
+    overflow:hidden; /* Para evitar que se haga scroll en todo lo que está fuera del content*/
     font-family: 'SF Pro Display', sans-serif; 
     font-weight: 300;
     color:var(--white);
@@ -126,3 +126,12 @@ body{
   }
 
  /*------------FIN DEL MENÚ ----------- */
+
+ 
+ /* DONDE VA A IR EL CONTENDO --- Vamos a evitar que se haga scroll en el sidebar */
+
+ #content{
+    overflow-y:auto; /* Para dejar que se haga scroll en el contenido */
+    height: 100vh;
+    padding-bottom: 1.5rem;
+}
