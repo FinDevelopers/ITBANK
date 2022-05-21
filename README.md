@@ -1,3 +1,5 @@
-# prueba
-Prueba 14/5/2022
-Ventanas itbank
+# Sprint 1
+Ventanas que decidimos realizar: 
+1. Inicio
+2. Login
+3. Resumen
