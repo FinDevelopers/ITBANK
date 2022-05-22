@@ -2,4 +2,4 @@
 Ventanas que decidimos realizar: 
 1. Inicio
 2. Login
-3. Resumen
+3. Perfil
