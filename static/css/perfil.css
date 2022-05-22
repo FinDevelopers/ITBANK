@@ -1,0 +1,44 @@
+.info-cuenta .card {
+    background-color: var(--raro);
+    border-radius: var(--br);
+}
+
+.info-cuenta .card img {
+    width: 15rem;
+}
+
+.info-cuenta .card .card-dato {
+    margin-bottom: 25px;
+}
+
+.info-cuenta .card .card-dato a {
+    color: var(--lightgrey);
+}
+
+.info-cuenta .card .card-dato .dato-valor {
+    color: var(--lightgrey);
+    font-weight: normal;
+}
+
+.info-datos .card {
+    background-color: var(--dark4);
+    border-radius: var(--br);
+}
+
+.info-datos .card .card-header {
+    background: none;
+    border-color: var(--lightgrey);
+    color: var(--p75);
+}
+
+.info-datos .card .card-body input {
+    background-color: var(--grey);
+    border: none;
+    color: var(--lightgrey);
+    padding: 6px 10px;
+}
+
+.info-datos .card .card-body button {
+    background-color: var(--primario);
+    border-radius: calc(var(--br) - 1rem);
+}
