@@ -5,6 +5,8 @@
     --p50: #8F9FF0;
     --p25: #BAC1EB;
     --po: #243DB9;
+    --blue: #2848EE;
+    --lilac: #D6DBFF;
 
     --dark: #151515;
     --dark2: #1B1B1B;
@@ -134,4 +136,254 @@ body{
     overflow-y:auto; /* Para dejar que se haga scroll en el contenido */
     height: 100vh;
     padding-bottom: 1.5rem;
+
+    background: var(--dark2);
 }
+
+#content a {
+    color: inherit;
+}
+
+/*MAIN SECTION*/
+.main-section{
+    display: block;
+    background: var(--raro);
+    border-bottom-left-radius: var(--br);
+    border-bottom-right-radius: var(--br);
+}
+
+.main-section h1{
+    text-align: center;
+    padding-top: 3rem;
+    font-size: 4rem;
+}
+
+.main-section .balance{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lilac);
+}
+
+.main-section .balance h2{
+    font-size: 5rem;
+    margin-right: 2rem;
+}
+
+.main-section .balance i{
+    font-size: 5rem;
+}
+
+.main-section .actions{
+    margin: 2rem 5rem;
+}
+
+.main-section .actions-title{
+    font-size: 3rem;
+    padding-left: 1rem;
+}
+
+.actions-container a{
+    text-decoration: none;
+}
+
+.actions-container .action{
+    background: var(--p75);
+    padding: .1rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: var(--br);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.actions-container .action img{
+    width: 4rem;
+}
+
+
+/*INFORMATION SECTION*/
+.information-section{
+    margin-top:2rem; 
+}
+
+/*TABLE*/
+.home-card{
+    border-radius: var(--br);
+    background: var(--raro);
+    color: var(--white);
+    margin-bottom: 5rem;
+    margin: 1rem;
+}
+
+.home-card-title{
+    padding: 1rem;
+    padding-left: 3rem;
+    font-size: 3rem;
+    border-bottom: 1px solid var(--white);
+}
+
+.table-container{
+    padding: 1rem 0;
+}
+
+.table-container .table{
+    color: var(--lilac);
+}
+
+.table-container .table th, .table-container .table td{
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    vertical-align:middle;
+    font-size: 1.6rem;
+}
+
+.home-card-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.home-card-button-container a{
+    background-color: var(--primario);
+    font-size: 2.5rem;
+}
+
+.value-increase{
+    color: rgb(21, 207, 80);
+    font-weight: bold;
+}
+
+.value-decrease{
+    color: rgb(245, 3, 80);
+    font-weight: bold;
+}
+
+/*CARDS*/
+#cards-card{
+    margin-bottom: 5rem;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 1260px) {
+    .actions-container .action{
+        width: 17rem;
+        height: 17rem;
+    }
+
+    .actions-container .action img{
+        width: 9rem;
+    }
+    
+    .actions-container .action p{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    /*INFORMATION SECTION*/
+    .table-container .table th, .table-container .table td{
+        font-size: 2.2rem;
+    }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1260px) {
+    /*MAIN SECTION*/
+    .actions-container .action{
+        width: 13rem;
+        height: 13rem;
+    }
+
+    .actions-container .action img{
+        width: 7rem;
+    }
+    
+    .actions-container .action p{
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+
+
+@media screen  and (max-width: 992px) {
+    .actions-container .action{
+        width: 90%;
+        height: 14rem;
+    }
+
+    .actions-container .action img{
+        width: 7rem;
+    }
+    
+    .actions-container .action p{
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+
+@media screen  and (max-width: 430px) {
+    .main-section h1{
+        font-size: 3rem;
+    }
+    .main-section .balance h2{
+        font-size: 3.7rem;
+        margin-right: 1rem;
+    }
+    .main-section .balance i{
+        font-size: 3.7rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Hola buenas*/
+
