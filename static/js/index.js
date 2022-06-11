@@ -1,34 +1,48 @@
 const d = document;
+//Contenedor donde van a estar las cards de los diferentes dólares
 const dolar = d.getElementById('dolar');
+//Arreglo que contiene Los nombres de los dólares que se van a mostrar
+//Los nombres salen de la propiedad 'nombre' de los distintos objetos 'casa' (ver link de la función fetch)
+//Para agregar o eliminar alguno, basta con sacar o agregar su nombre al array
 const dolaresAUsar = ['Dolar Oficial', 'Dolar Blue', 'Dolar Contado con Liqui', 'Dolar Bolsa','Dolar turista'];
 
-function getDolar(){
+//Función que actualiza el contenedor que tiene la información de los dólares
+function updateDolarContainer(){
     
+    //Limpia contenedor
     dolar.innerHTML = '';
 
-    // fetch viene con el método get por defecto
+    //Trae el array de la API 
     fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
     .then(res => res.json()) 
     .then(datos => {
-        //Filtrar
+        //La variable 'datos' es el array de objetos
+        //Cada objeto tiene adentro otro objeto cuyo nombre es 'casa'
+        //Cada objeto 'casa' es el que tiene la información de cada tipo de dólar (ej. casa.nombre, casa.venta)
+
+        //Filtra array de datos para descartar los objetos 'casa' cuyo 'nombre' no está en el array de dolaresAUsar
         datos = datos.filter(dato => dolaresAUsar.indexOf(dato.casa.nombre) !== -1);
         for(let dato of datos){
-            // al agregar el más está concatenando
+            //Cada 'dato' sería el objeto que adentro tiene al objeto 'casa'
+
+            // Concatena la string que devuelve createDolarCardHTML() al innerHTML del contenedor
             dolar.innerHTML += createDolarCardHTML(dato);
         }  
     })
 }
 
+//Crea una string que tiene el código HTML de las cards 
+//Importante: hay algunos dólares que no cotizan la compra, en ese caso no se muestra y la venta pasa a tener col-12 (en vez de col-6)
 function createDolarCardHTML(dato){
-    // Asignando icono dependiendo el valor de la variación
+    // Asignando un ícono (y su color) dependiendo del valor de la variación
     let variacionIcon;
     let variacion = normalizeNumber(dato.casa.variacion);
     if(variacion > 0){
-     variacionIcon = "bi bi-arrow-up text-primary";
+     variacionIcon = "bi bi-arrow-up text-success";
     }else if(variacion < 0){
         variacionIcon = "bi bi-arrow-down text-primary";
     }else{
-        variacionIcon = "bi bi bi-pause text-primary rotado90";
+        variacionIcon = "bi bi bi-pause text-danger rotado90";
     };
 
     // Primera parte invariable de las cards
@@ -74,14 +88,17 @@ function createDolarCardHTML(dato){
 }
 
 //Transforma las strings de los números que vienen con coma para que tengan punto, y los transforma en number
+//ej. '4,21' -> '4.21' -> 4.21 
 function normalizeNumber(num){
     return Number(num.replace(',','.'))
 }
 
+//Dada una cantidad de minutos devuelve cuantos milisegundos hay en esa cantidad de minutos
 function minutosAMilsegundos(mins){
     return mins * 60000; 
 }
 
-getDolar();
-var intervalID = window.setInterval(getDolar,minutosAMilsegundos(10));
+//Actualiza el contenedor cuando carga la página y despues cada 10 minutos
+updateDolarContainer();
+var intervalID = window.setInterval(updateDolarContainer,minutosAMilsegundos(10));
  
