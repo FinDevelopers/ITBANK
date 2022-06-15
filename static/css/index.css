@@ -19,7 +19,7 @@
     --raro: #393f81;
 
     /* BORDER RADIUS PREDEFINIDO */
-    --br: 2rem;
+    --br: 1.5rem;
 }
 html {
     box-sizing: border-box;
@@ -342,20 +342,47 @@ body{
 
 /*COTIZACION DOLAR*/
 #dolar{
-    max-height: 200px;
+    max-height: 220px;
+    min-height: 207px;
 }
 
 #dolar .card{
-    min-width: 200px;
     display: inline-flex;
     margin: 0 auto;
+    width: 20rem;
+    background-color: var(--p75);
+    color: var(--white) !important;
+    border-radius: var(--br);
 }
+
+#dolar .card .card-title{
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+ }
+
+ #dolar .card .card-text b {
+    font-weight: bold;
+
+ }
+
+ #dolar .card .card-text i{
+    background-color: var(--white);
+    font-size: 1.5rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-left: 6px;
+    font-weight: 1000;
+ }
+
+
 
 .rotado90 {
     transform: rotate(90deg);
 }
-
-
 
 
 

@@ -20,9 +20,10 @@ function updateDolarContainer(){
         //Cada objeto tiene adentro otro objeto cuyo nombre es 'casa'
         //Cada objeto 'casa' es el que tiene la información de cada tipo de dólar (ej. casa.nombre, casa.venta)
 
+        let datosFiltrados = [];
         //Filtra array de datos para descartar los objetos 'casa' cuyo 'nombre' no está en el array de dolaresAUsar
-        datos = datos.filter(dato => dolaresAUsar.indexOf(dato.casa.nombre) !== -1);
-        for(let dato of datos){
+        datosFiltrados = datos.filter(dato => dolaresAUsar.indexOf(dato.casa.nombre) !== -1);
+        for(let dato of datosFiltrados){
             //Cada 'dato' sería el objeto que adentro tiene al objeto 'casa'
 
             // Concatena la string que devuelve createDolarCardHTML() al innerHTML del contenedor
@@ -40,16 +41,17 @@ function createDolarCardHTML(dato){
     if(variacion > 0){
      variacionIcon = "bi bi-arrow-up text-success";
     }else if(variacion < 0){
-        variacionIcon = "bi bi-arrow-down text-primary";
+        variacionIcon = "bi bi-arrow-down text-danger";
     }else{
-        variacionIcon = "bi bi bi-pause text-danger rotado90";
+        variacionIcon = "bi bi bi-pause text-primary rotado90";
     };
+    
 
     // Primera parte invariable de las cards
     let result = ` 
-    <div class="card text-center text-dark m-3" style="width: 18rem;">
+    <div class="card text-center text-dark m-3">
         <div class="card-body">
-        <h2 class="card-title">${dato.casa.nombre}</h2>
+        <h2 class="card-title ">${dato.casa.nombre}</h2>
             <div class="row">`;
     
     // Parte variable de las cards
@@ -68,13 +70,12 @@ function createDolarCardHTML(dato){
         <div class="col-12">
             <p class="card-text">Venta<br><b>$${dato.casa.venta}</b></p>
         </div> `
-        
     }
 
     // Última parte invariable de las cards
     result += `
     <div class="col-12">
-            <p class="card-text d-flex align-items-center justify-content-center">
+            <p class="card-text d-flex align-items-center justify-content-center mt-3">
                 <span>${variacion}</span>
                 <i class="${variacionIcon}"></i>
             </p>
