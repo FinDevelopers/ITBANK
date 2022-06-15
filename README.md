@@ -5,5 +5,5 @@ Ventanas que decidimos realizar:
 2. Login
 3. Perfil
 
-##Sprint 3
+## Sprint 3
 Taer información de la cotización del dolar desde una api
