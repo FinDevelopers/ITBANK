@@ -6,4 +6,4 @@ Ventanas que decidimos realizar:
 3. Perfil
 
 ## Sprint 3
-Taer información de la cotización del dolar desde una api
+Traer información de la cotización del dolar desde una api
