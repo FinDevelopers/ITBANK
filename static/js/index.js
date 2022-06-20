@@ -76,7 +76,7 @@ function createDolarCardHTML(dato){
     result += `
     <div class="col-12">
             <p class="card-text d-flex align-items-center justify-content-center mt-3">
-                <span>${variacion}</span>
+                <span>${formatNumber(variacion)}</span>
                 <i class="${variacionIcon}"></i>
             </p>
         </div>
@@ -92,6 +92,12 @@ function createDolarCardHTML(dato){
 //ej. '4,21' -> '4.21' -> 4.21 
 function normalizeNumber(num){
     return Number(num.replace(',','.'))
+}
+
+//Transforma una variable de tipo number a una de tipo string, y remplaza el '.' decimal con una coma ','
+//ej. 4.21 -> '4.21' -> '4,21' 
+function formatNumber(num){
+    return String(num).replace('.',',');
 }
 
 //Dada una cantidad de minutos devuelve cuantos milisegundos hay en esa cantidad de minutos
