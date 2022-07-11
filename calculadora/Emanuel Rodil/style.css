@@ -25,7 +25,6 @@ section {
 height: 100%;
 display: flex;
 justify-content: center;
-align-items: center;
 background-color: #79787e;
 margin: 0px 205px 0px 355px;
 padding: 0 0 100px 0;
@@ -36,10 +35,14 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 color: #1f202f;
 }
 
-#mensaje{
-    list-style: none;
-    margin: 120px 37px 0px 0px;
+#promedio{
     position: absolute;
+    margin: 10px 0px 70px 0px;
+    text-align: center;
+}
+#mensaje{
+    margin: 50px 32px 0px 0px;
+    list-style: none;
 }
 
 @media  screen and (max-width: 1025px) and (min-width: 1000px) {
